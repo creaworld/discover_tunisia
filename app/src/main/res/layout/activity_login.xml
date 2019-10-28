@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_signup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="tip.tdc.com.tip.activity.login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imvCloseLogin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="10dp"
+        android:src="@drawable/mr_dialog_close_light"
+        android:tint="@color/colorGrey900" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- Login progress -->
+        <ProgressBar
+            android:id="@+id/login_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/logo_tn_color"/>
+
+
+        <ScrollView
+            android:id="@+id/login_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:id="@+id/email_login_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_extra_large"
+                android:layout_marginRight="@dimen/margin_extra_large"
+                android:orientation="vertical">
+
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/btnLoginInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/title_login_btn"
+                            android:textColor="@color/colorGrey300"
+                            android:textSize="@dimen/text_login_btn" />
+
+                        <View
+                            android:id="@+id/indicatorLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorGrey300" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/btnSignupInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/title_signup_btn"
+                            android:textColor="@color/colorBlue500"
+                            android:textSize="@dimen/text_login_btn" />
+
+                        <View
+                            android:id="@+id/indicatorSignup"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorBlue500" />
+                    </RelativeLayout>
+                </LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+<!--_____________________________________ login form_____________________________________________-->
+                    <LinearLayout
+                        android:id="@+id/llLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_edit_text"
+                            android:layout_gravity="center_vertical">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/email"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="@null"
+                                android:hint="@string/prompt_email"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/colorPrimary" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <!--<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="10dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_email" />
+
+                                <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_large">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bg_edit_text"
+                                    android:layout_gravity="center_vertical">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/email"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="50dp"
+                                        android:background="@null"
+                                        android:drawableLeft="@drawable/icon_email"
+                                        android:hint="@string/prompt_email"
+                                        android:inputType="textEmailAddress"
+                                        android:maxLines="1"
+                                        android:textColor="@color/black"
+                                        android:textColorHint="@color/colorIcon" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2px"
+                                    android:layout_alignParentBottom="true"
+                                    android:background="@color/colorLine" />
+                            </RelativeLayout>
+
+
+                        </LinearLayout>-->
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_edit_text"
+                            android:layout_marginTop="20dp"
+                            >
+
+                            <EditText
+                                android:id="@+id/password"
+                                android:layout_width="match_parent"
+                                android:layout_height="49dp"
+                                android:background="@null"
+                                android:hint="@string/prompt_password"
+                                android:imeActionId="@+id/login"
+                                android:imeActionLabel="@string/action_sign_in_short"
+                                android:imeOptions="actionUnspecified"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/colorPrimary" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/action_forgot_password"
+    android:layout_gravity="end"
+    android:layout_marginTop="10dp"
+    android:textAllCaps="false"
+    style="?android:textAppearanceSmall"
+    android:id="@+id/btnForgotPassword"
+    android:shadowColor="@color/transparent"
+    android:background="@color/transparent"
+    android:textColor="@color/colorPrimary"/>
+
+                        <!--<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="10dp"
+                                android:scaleType="fitCenter"
+
+                                android:src="@drawable/icon_password" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_large"
+                                android:orientation="vertical">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <EditText
+                                        android:id="@+id/password"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="49dp"
+                                        android:background="@null"
+                                        android:hint="@string/prompt_password"
+                                        android:imeActionId="@+id/login"
+                                        android:imeActionLabel="@string/action_sign_in_short"
+                                        android:imeOptions="actionUnspecified"
+                                        android:inputType="textPassword"
+                                        android:maxLines="1"
+                                        android:singleLine="true"
+                                        android:textColor="@color/black"
+                                        android:textColorHint="@color/colorIcon" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2px"
+                                    android:layout_alignParentBottom="true"
+                                    android:background="@color/colorLine" />
+                            </RelativeLayout>
+                        </LinearLayout>-->
+
+                        <Button
+                            android:id="@+id/email_sign_in_button"
+                            style="?android:textAppearanceSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_extra_large"
+                            android:background="@drawable/btn_round_login_normal"
+                            android:shadowColor="@color/transparent"
+                            android:text="@string/action_sign_in"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorGrey50"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:textSize="16dp"
+                            android:backgroundTint="@color/login_btn"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/indi_btn_facebook_login_bg"
+                            android:gravity="center_vertical">
+
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/margin_medium"
+                                android:layout_toLeftOf="@+id/btnLoginFb"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_fb_solid"
+                                android:visibility="visible" />
+
+                            <Button
+                                android:id="@+id/btnLoginFb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerHorizontal="true"
+                                android:background="@color/transparent"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:text="Continue with Facebook"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorGrey50"
+                                android:textSize="16dp"
+                                android:visibility="visible" />
+
+                            <com.facebook.login.widget.LoginButton
+                                android:id="@+id/button_facebook_login"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:alpha="1"
+                                android:background="@color/transparent"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_edit_text">
+
+                                <Spinner
+                                    android:id="@+id/lang_spinner"
+                                    android:layout_width="wrap_content"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:layout_height="wrap_content"/>
+
+                            </RelativeLayout>
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/register"
+                                android:layout_marginLeft="30dp"
+                                android:textStyle="bold"
+                                android:id="@+id/btnSignupInput"
+                                android:textColor="@color/colorPrimary"
+                                android:background="@color/transparent" />
+                        </LinearLayout>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/transparent"
+                            android:text="@string/action_skip"
+                            android:shadowColor="@color/transparent"
+                            android:textColor="@color/colorPrimary"
+                            android:id="@+id/skip_btn"
+                            android:layout_marginBottom="40dp"
+                            android:layout_gravity="center_horizontal"
+                            style="?android:textAppearanceSmall"/>
+                    </LinearLayout>
+<!--____________________________________ sign up form____________________________________________-->
+                    <LinearLayout
+                        android:id="@+id/llSignUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:background="@drawable/bg_edit_text"
+                            android:layout_height="match_parent">
+
+                            <EditText
+                                android:id="@+id/signupUsername"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:background="@null"
+                                android:hint="@string/prompt_full_name"
+                                android:inputType="textPersonName"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/colorIcon" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:background="@drawable/bg_edit_text"
+                            android:layout_marginTop="20dp"
+                            android:layout_height="match_parent">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/signupEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:background="@null"
+                                android:hint="@string/prompt_email"
+                                android:inputType="textEmailAddress"
+                                android:maxLines="1"
+                                android:textColor="@color/black"
+
+                                android:textColorHint="@color/colorIcon" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:background="@drawable/bg_edit_text"
+                            android:layout_marginTop="20dp"
+                            android:layout_height="match_parent">
+
+                            <EditText
+                                android:id="@+id/signupPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:background="@null"
+                                android:hint="@string/prompt_password"
+                                android:imeActionId="@+id/login"
+                                android:imeActionLabel="@string/action_sign_in_short"
+                                android:imeOptions="actionUnspecified"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/colorIcon" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:background="@drawable/bg_edit_text"
+                            android:layout_marginTop="20dp"
+                            android:layout_height="match_parent">
+
+                            <EditText
+                                android:id="@+id/signupPasswordConfirm"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:background="@color/transparent"
+                                android:hint="@string/prompt_password_confirm"
+                                android:imeActionId="@+id/login"
+                                android:imeActionLabel="@string/action_sign_in_short"
+                                android:imeOptions="actionUnspecified"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/colorIcon" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <!-- <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="50dp"
+                             android:orientation="horizontal">
+
+                             <ImageView
+                                 android:layout_width="15dp"
+                                 android:layout_height="match_parent"
+                                 android:layout_gravity="center_vertical"
+                                 android:layout_marginTop="5dp"
+                                 android:scaleType="fitCenter"
+                                 android:src="@drawable/icon_usernam" />
+
+                             <RelativeLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="match_parent"
+                                 android:layout_marginLeft="@dimen/margin_large">
+
+                                 <android.support.design.widget.TextInputLayout
+                                     android:layout_width="match_parent"
+                                     android:layout_height="match_parent">
+
+                                     <EditText
+                                         android:id="@+id/signupUsername"
+                                         android:layout_width="match_parent"
+                                         android:layout_height="match_parent"
+                                         android:background="@null"
+                                         android:hint="@string/prompt_username"
+                                         android:inputType="textPersonName"
+                                         android:maxLines="1"
+                                         android:singleLine="true"
+                                         android:textColor="@color/black"
+                                         android:textColorHint="@color/colorIcon" />
+
+                                 </android.support.design.widget.TextInputLayout>
+
+                                 <View
+                                     android:layout_width="match_parent"
+                                     android:layout_height="2px"
+                                     android:layout_alignParentBottom="true"
+                                     android:background="@color/colorLine" />
+                             </RelativeLayout>
+                         </LinearLayout>-->
+
+                        <!--<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_email" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_large">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/signupEmail"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@null"
+                                        android:hint="@string/prompt_email"
+                                        android:inputType="textEmailAddress"
+                                        android:maxLines="1"
+                                        android:textColor="@color/black"
+
+                                        android:textColorHint="@color/colorIcon" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2px"
+                                    android:layout_alignParentBottom="true"
+                                    android:background="@color/colorLine" />
+                            </RelativeLayout>
+                        </LinearLayout>-->
+
+                       <!-- <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_password" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_large">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <EditText
+                                        android:id="@+id/signupPassword"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@null"
+                                        android:hint="@string/prompt_password"
+                                        android:imeActionId="@+id/login"
+                                        android:imeActionLabel="@string/action_sign_in_short"
+                                        android:imeOptions="actionUnspecified"
+                                        android:inputType="textPassword"
+                                        android:maxLines="1"
+                                        android:textColor="@color/black"
+                                        android:textColorHint="@color/colorIcon" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2px"
+                                    android:layout_alignParentBottom="true"
+                                    android:background="@color/colorLine" />
+                            </RelativeLayout>
+                        </LinearLayout>-->
+
+                        <!--<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="5dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/icon_password" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/margin_large">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <EditText
+                                        android:id="@+id/signupPasswordConfirm"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/transparent"
+                                        android:hint="@string/prompt_password_confirm"
+                                        android:imeActionId="@+id/login"
+                                        android:imeActionLabel="@string/action_sign_in_short"
+                                        android:imeOptions="actionUnspecified"
+                                        android:inputType="textPassword"
+                                        android:maxLines="1"
+                                        android:textColor="@color/black"
+                                        android:textColorHint="@color/colorIcon" />
+
+                                </android.support.design.widget.TextInputLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2px"
+                                    android:layout_alignParentBottom="true"
+                                    android:background="@color/colorLine" />
+                            </RelativeLayout>
+                        </LinearLayout>-->
+
+                        <Button
+                            android:id="@+id/btnSignUp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="@dimen/margin_extra_large_2"
+                            android:background="@drawable/btn_round_login_normal"
+                            android:text="@string/action_sign_up"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorGrey50"
+                            android:shadowColor="@color/transparent"
+                            android:textSize="16dp"
+                            android:backgroundTint="@color/login_btn"
+                            android:textStyle="bold" />
+
+
+                        <Button
+                            android:background="@color/transparent"
+                            style="?android:attr/textAppearanceSmall"
+                            android:layout_marginTop="20dp"
+                            android:layout_width="wrap_content"
+                            android:shadowColor="@color/transparent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:text="@string/action_view_terms"
+                            android:id="@+id/terms_btn"
+                            android:layout_marginBottom="20dp"
+                            android:textColor="@color/colorPrimary"/>
+
+                        <Button
+                            android:background="@color/transparent"
+                            style="?android:attr/textAppearanceSmall"
+                            android:shadowColor="@color/transparent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:text="@string/action_back"
+                            android:id="@+id/btnLoginInput"
+                            android:layout_marginBottom="40dp"
+                            android:textColor="@color/colorPrimary"/>
+
+                        <!--<TextView
+                            android:id="@+id/tvTermCondition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_extra_large_2"
+                            android:layout_marginTop="@dimen/margin_extra_large"
+                            android:textColor="@color/colorContent"
+                            android:textSize="16dp" />-->
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlMaskLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            android:src="@drawable/fb_login_loading" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_comment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tip.tdc.com.tip.activity.comment.CommentActivity">
+
+    <LinearLayout
+        android:id="@+id/topbarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/accent"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_top_bar" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listviewComments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlComment"
+        android:layout_below="@+id/topbarView"
+        android:divider="@null"
+        android:dividerHeight="0dp"></ListView>
+
+    <RelativeLayout
+        android:id="@+id/rlComment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_toLeftOf="@+id/imvSendComment"
+            android:hint="write a comment"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/colorGrey900"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:id="@+id/imvSendComment"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:padding="@dimen/margin_small"
+            android:src="@drawable/ic_menu_send" />
+
+    </RelativeLayout>
+</RelativeLayout>

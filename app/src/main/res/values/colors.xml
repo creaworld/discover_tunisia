@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F1</color>
+    <color name="colorPrimaryDark">#2196F1</color>
+    <color name="colorAccent">#2196F1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="colorLine">#eeeeee</color>
+    <color name="colorHeading">#212121</color>
+    <color name="colorContent">#727272</color>
+    <color name="colorIcon">#b6b6b6</color>
+
+    <!--  -->
+    <color name="colorGrey900">#212121</color>
+    <color name="colorGrey800">#424242</color>
+    <color name="colorGrey700">#616161</color>
+    <color name="colorGrey600">#757575</color>
+    <color name="colorGrey500">#9e9e9e</color>
+    <color name="colorGrey400">#bdbdbd</color>
+    <color name="colorGrey300">#e0e0e0</color>
+    <color name="colorGrey200">#eeeeee</color>
+    <color name="colorGrey100">#f5f5f5</color>
+    <color name="colorGrey50">#fafafa</color>
+
+    <color name="colorBlue900">#0d47a1</color>
+    <color name="colorBlue800">#1565c0</color>
+    <color name="colorBlue700">#1976d2</color>
+    <color name="colorBlue600">#1e88e5</color>
+    <color name="colorBlue500">#2196F1</color>
+    <color name="colorBlue400">#42a5f5</color>
+    <color name="colorBlue300">#64b5f6</color>
+    <color name="colorBlue200">#90caf9</color>
+    <color name="colorBlue100">#bbdefb</color>
+    <color name="colorBlue50">#e3f2fd</color>
+
+    <color name="colorGreen900">#1b5e20</color>
+    <color name="colorGreen800">#2e7d32</color>
+    <color name="colorGreen700">#388e3c</color>
+    <color name="colorGreen600">#43a047</color>
+    <color name="colorGreen500">#4caf50</color>
+    <color name="colorGreen400">#66bb6a</color>
+    <color name="colorGreen300">#81c784</color>
+    <color name="colorGreen200">#a5d6a7</color>
+    <color name="colorGreen100">#c8e6c9</color>
+    <color name="colorGreen50">#e8f5e9</color>
+
+    <color name="accent">#2196F1</color>
+    <color name="btn_pressed">#2196F1</color>
+    <color name="btn_normal">#000000</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="player">#04b3d2</color>
+    <color name="player_80_percent">#8804b3d2</color>
+    <color name="player_background">#4a4a4a</color>
+    <color name="new_color">#e9c000</color>
+    <color name="lock_bg_green">#ff00bb9e</color>
+    <color name="transparent">#00c5c4c4</color>
+    <color name="transparent_color">#00c5c4c4</color>
+    <color name="facebook_btn">#365899</color>
+    <color name="facebook_btn_pressed">#4e7fdc</color>
+
+    <color name="bgColor_overlay">#60000000</color>
+    <color name="bgColor_overlay_black">#95000000</color>
+    <color name="bgColor_svprogressdefaultview">@android:color/white</color>
+    <color name="textColor_svprogresshuddefault_msg">#000000</color>
+    <color name="roundColor_svprogresshuddefault">#e5e5e5</color>
+    <color name="roundProgressColor_svprogresshuddefault">@android:color/black</color>
+
+    <!--Login -->
+    <color name="btn_login_bg_normal">#2196F1</color>
+    <color name="login_btn">#dd8e08</color>
+    <color name="bg_dialog">#9f000000</color>
+
+    <!-- Weather Color Palette -->
+    <color name="super_hot">#ff3241</color>  <!-- <<28           |      <<84 -->
+    <color name="medium_hot">#ff9c2d</color> <!-- >>26 & <<28    |      >>80 & <<84 -->
+    <color name="hot">#ffcf31</color>        <!-- >>23 & <<26    |      >>74 & <<79 -->
+    <color name="ok">#48e2c0</color>         <!-- >>21 & <<23    |      >>70 & <<74 -->
+    <color name="ok_chill">#49e2db</color>   <!-- >>21 & <<15    |      >>60 & <<70 -->
+    <color name="cold">#82ceea</color>       <!-- >>15           |      <<60 -->
+
+
+
+    <!--__________________________________Splash bg colors_______________________________________-->
+
+    <color name="end_bg">#007ce6</color>
+    <color name="start_bg">#00294e</color>
+
+
+
+</resources>
+
+

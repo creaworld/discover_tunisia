@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="216dp"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ImageView
+        android:id="@+id/imvCityThumb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/imvCityThumbMask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mask_location_thumb" />
+
+    <ImageView
+        android:id="@+id/imvWeatherThumb"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/tvWeatherTemp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_large"
+        android:layout_marginTop="?attr/actionBarSize" />
+
+    <TextView
+        android:id="@+id/tvWeatherTemp"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_large"
+        android:gravity="right"
+        android:text="---"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/tvCityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvCityDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:maxLines="1"
+        android:text="---"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/tvCityDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:maxLines="1"
+        android:text="---"
+        android:textColor="@color/colorGrey50"
+        android:textSize="16dp" />
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2017.
+  ~
+  ~ Created by Pham Ngoc Thanh
+  ~ Contact via Email: ngocthanh2207@gmail.com
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_weather_h"
+    android:orientation="vertical"
+    tools:ignore="overdraw">
+
+    <TextView
+        android:id="@+id/tvHeaderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="24*C"
+        android:textColor="@color/colorGrey700"
+        android:textSize="@dimen/item_weather_text_weather"
+        tools:ignore="UnusedAttribute" />
+
+
+</LinearLayout>

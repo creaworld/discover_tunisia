@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="250dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="0.15"
+        android:layout_height="60dp"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/arrow_left"
+        android:tint="@color/colorPrimary"
+        android:src="@drawable/ic_arrow_left"/>
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:layout_weight="0.8">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image"
+            android:layout_centerHorizontal="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="5dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_date">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:id="@+id/carousel_date_tv"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:maxLines="1"
+                android:paddingRight="15dp"
+                android:id="@+id/carousel_text_tv"
+                android:ellipsize="end"
+                android:layout_marginLeft="20dp"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="0.15"
+        android:layout_height="60dp"
+        android:id="@+id/arrow_right"
+        android:layout_gravity="center_vertical"
+        android:tint="@color/colorPrimary"
+        android:src="@drawable/ic_arrow_right"/>
+
+
+</LinearLayout>

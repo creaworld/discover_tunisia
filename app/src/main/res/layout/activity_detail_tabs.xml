@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="tip.tdc.com.tip.activity.detail.DetailTabsActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_detail_expand_height"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:titleEnabled="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:orientation="vertical"
+                    app:layout_collapseMode="parallax">
+
+                    <include layout="@layout/content_header_city_detail" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.3"
+                    android:background="@android:color/black"
+                    android:fitsSystemWindows="true"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginBottom="40dp"
+                    android:padding="0dp"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:alpha="0"
+                    android:background="@color/colorBlue500"
+                    app:layout_collapseMode="pin">
+
+                    <TextView
+                        android:id="@+id/tvTitleActivity"
+                        style="@style/title_top_bar"
+                        android:layout_centerInParent="true"
+                        android:alpha="1"
+                        android:text="..."
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imvTopbarBack"
+                    style="@style/btn_back_top_bar"
+                    android:layout_centerVertical="true"
+                    android:visibility="visible"
+                    android:scaleType="fitCenter"
+                    app:layout_collapseMode="pin" />
+
+                <ImageView
+                    android:id="@+id/imvTopbarSearch"
+                    style="@style/btn_search_top_bar"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right"
+                    app:layout_collapseMode="pin" />
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs"
+                    style="@style/MyCustomTabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/colorBlue500"
+                    android:visibility="gone"
+                    app:tabGravity="center"
+                    app:tabIndicatorColor="@android:color/white"
+                    app:tabMaxWidth="120dp"
+                    app:tabMinWidth="60dp"
+                    app:tabMode="scrollable" />
+
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="tip.tdc.com.tip.activity.information.PrivacyActivity"
+            tools:showIn="@layout/activity_privacy">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rlbounderMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:visibility="gone"
+                    android:background="@color/colorGrey100">
+
+                    <FrameLayout
+                        android:id="@+id/frameLayoutMap"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <fragment
+                            android:id="@+id/map"
+                            class="tip.tdc.com.tip.activity.detail.MySupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llViewPlaceInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="#ffffff"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_small">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imvPlaceThumb"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/avatar_default"
+                            app:civ_border_color="#FF000000"
+                            app:civ_border_width="0dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/margin_medium"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/placeName"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:text="Text name"
+                                android:textColor="@color/colorGrey800" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/placeLocation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="Location"
+                                    android:textColor="@color/colorGrey500"
+                                    android:textSize="12dp" />
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/placePrice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentRight="true"
+                                    android:text="Price"
+                                    android:textColor="@color/colorGrey900"
+                                    android:textSize="12dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/vOverlayMap"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#1f000000"
+                        android:visibility="visible" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlBackToList"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorGrey100">
+
+                        <TextView
+                            android:id="@+id/tvBankToList"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:text="Back to list"
+                            android:textColor="@color/colorGrey800"
+                            android:textSize="14dp" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@+id/tvBankToList"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:paddingBottom="@dimen/margin_medium"
+                            android:paddingTop="@dimen/margin_medium"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_arrow_up" />
+
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp"
+                    android:layout_below="@+id/rlbounderMap"
+                    android:background="@color/white"
+                    android:visibility="gone"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp"
+                    android:background="@color/white"
+                    android:layout_below="@+id/rlbounderMap"
+                    android:id="@+id/home_frame_layout"/>
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <RelativeLayout
+            android:id="@+id/rlBottomMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="#dddddd" />
+
+            <RelativeLayout
+                android:id="@+id/layBottom"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="0dp"
+                android:background="@color/colorGrey50"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_small">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/llMenuAllActivity"
+                        android:layout_width="0dp"
+                        android:layout_weight=".25"                        android:layout_height="match_parent"
+                        android:foregroundTint="@color/colorBlue500"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageButton
+                            android:id="@+id/imbAllCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:padding="6dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/menu_allcities"
+                            android:tint="@color/colorGrey600" />
+
+                       <!-- <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.4"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:text="All City"
+                            android:textColor="@color/colorGrey600"
+                            android:textSize="11dp" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llMenuHome"
+                        android:layout_width="0dp"
+                        android:layout_weight=".25"
+                        android:layout_height="match_parent"
+                        android:foregroundTint="@color/colorBlue500"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imbHome"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:padding="6dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_home"
+                            android:tint="@color/colorBlue500" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llMenuExplore"
+                        android:layout_width="0dp"
+                        android:layout_weight=".25"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/llMenuHome"
+                        android:foregroundTint="@color/colorBlue500"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imbExplore"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:padding="6dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/tab_guide_active"
+                            android:tint="@color/colorGrey600" />
+
+                        <!--<TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.4"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:text="Explore"
+                            android:textColor="@color/colorBlue500"
+                            android:textSize="11dp" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llMenuSaved"
+                        android:layout_width="0dp"
+                        android:layout_weight=".25"                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/llMenuExplore"
+                        android:foregroundTint="@color/colorBlue500"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imbSaved"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:padding="6dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_image"
+                            android:tint="@color/colorGrey600" />
+
+                        <!-- <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.4"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:text="Saved"
+                            android:textColor="@color/colorGrey600"
+                            android:textSize="11dp" />-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llMenuAskShare"
+                        android:layout_width="0dp"
+                        android:layout_weight=".25"                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/llMenuSaved"
+                        android:foregroundTint="@color/colorBlue500"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imbAskShare"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:padding="6dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_info"
+                            android:tint="@color/colorGrey600" />
+
+                        <!--<TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.4"
+                            android:clickable="false"
+                            android:gravity="center"
+                            android:text="Ask - Share"
+                            android:textColor="@color/colorGrey600"
+                            android:textSize="11dp" />-->
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/llMenuAddTip"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/btn_add_tip_bg"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imbAddTip"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/transparent"
+                        android:clickable="false"
+                        android:padding="4dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/tab_menu_plus"
+                        android:tint="@color/colorGrey50" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:text="Ask"
+                        android:textColor="@color/colorGrey50"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <!--<android.support.design.widget.NavigationView-->
+        <!--android:id="@+id/nav_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:background="#000000"-->
+        <!--android:fitsSystemWindows="true"-->
+        <!--android:paddingTop="@dimen/margin_extra_large">-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/app_background" />-->
+
+            <!--<ScrollView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="#af2196f3">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<include-->
+                        <!--layout="@layout/nav_header_user_info"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:layout_marginLeft="@dimen/margin_large"-->
+                        <!--android:layout_marginRight="@dimen/margin_medium"-->
+                        <!--android:background="@color/colorBlue400" />-->
+
+                    <!--<include-->
+                        <!--layout="@layout/nav_menus"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:layout_marginLeft="@dimen/margin_large"-->
+                        <!--android:layout_marginRight="@dimen/margin_medium"-->
+                        <!--android:background="@color/colorBlue400" />-->
+
+                    <!--<include-->
+                        <!--layout="@layout/nav_info"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content" />-->
+                <!--</LinearLayout>-->
+            <!--</ScrollView>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvNavAppVersion"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_marginBottom="@dimen/margin_medium"-->
+                <!--android:layout_marginLeft="@dimen/margin_large"-->
+                <!--android:alpha="0.8"-->
+                <!--android:text="Version 1.2.0"-->
+                <!--android:textColor="@color/colorGrey100"-->
+                <!--android:textSize="12dp" />-->
+        <!--</RelativeLayout>-->
+    <!--</android.support.design.widget.NavigationView>-->
+
+</android.support.v4.widget.DrawerLayout>

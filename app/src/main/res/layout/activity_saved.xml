@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017.
+  ~
+  ~ Created by Pham Ngoc Thanh
+  ~ Contact via Email: ngocthanh2207@gmail.com
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="tip.tdc.com.tip.activity.information.AboutActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorBlue500">
+
+        <include layout="@layout/layout_top_bar" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|right">
+
+            <TextView
+                android:id="@+id/tvFilterKey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_large"
+                android:text="All"
+                android:textColor="@color/colorGrey50"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="@dimen/margin_large"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_check_white" />
+
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/dynamic_spinner"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|right"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <tip.tdc.com.tip.utils.view.stickylistheaders.StickyListHeadersListView
+        android:id="@+id/lvSaved"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:divider="#ffffff"
+        android:dividerHeight="1px"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp"
+        android:visibility="visible" />
+
+</LinearLayout>

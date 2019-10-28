@@ -1,0 +1,82 @@
+<!--
+  ~ Copyright (c) 2017.
+  ~
+  ~ Created by Pham Ngoc Thanh
+  ~ Contact via Email: ngocthanh2207@gmail.com
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/margin_extra_large_2"
+    tools:context="tip.tdc.com.tip.activity.detail.DetailTabsActivity$PlaceholderFragment">
+
+    <LinearLayout
+        android:id="@+id/llCategory1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:id="@+id/rlRecentTip"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvRecentTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Questions"
+                    android:textColor="@color/colorBlue500"
+                    android:textSize="18dp" />
+
+                <View
+                    android:id="@+id/viewRecentTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorBlue500" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlTopTip"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvTopTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Tips"
+                    android:textColor="@color/colorGrey600"
+                    android:textSize="18dp" />
+
+                <View
+                    android:id="@+id/viewTopTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorGrey300" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</RelativeLayout>

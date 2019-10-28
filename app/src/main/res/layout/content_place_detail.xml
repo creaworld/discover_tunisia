@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollPlaceDetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="tip.tdc.com.tip.activity.detail.DetailPlaceActivity"
+    tools:showIn="@layout/activity_detail">
+
+    <tip.tdc.com.tip.utils.CustomScrollView
+        android:id="@+id/scrollPlaceDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingBottom="80dp">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/content_place_facility" />
+
+            <include layout="@layout/content_place_tour_info" />
+
+            <LinearLayout
+                android:id="@+id/llOpenTime"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:background="@color/colorGrey50"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_openingday" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvOpenningDayTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Opening Day"
+                            android:textColor="@color/colorHeading"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/tvOpenningDayValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Mon - Sun"
+                            android:textColor="@color/colorContent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="2px"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:background="@color/colorLine" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="@dimen/margin_large"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_openingtime" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvOpenningTimeTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Opening Time"
+                            android:textColor="@color/colorHeading"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/tvOpenningTimeValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="Mon - Sun"
+                            android:textColor="@color/colorContent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="@color/colorGrey200" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvPlaceDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/colorGrey800"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/tvPlaceDescriptionReadmore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Read more"
+                        android:textColor="@color/colorBlue500"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvTransportContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:autoLink="all"
+                    android:maxLines="3"
+                    android:text="34234234"
+                    android:textColor="@color/colorContent"
+                    android:lineSpacingExtra="9dp"
+                    android:textSize="16dp" />
+
+                <Button
+                    android:id="@+id/btnBookNow"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_circle_solid_blue"
+                    android:scaleType="fitCenter"
+                    android:shadowColor="@color/transparent"
+                    android:text="Book Now"
+                    android:textAllCaps="false"
+                    android:visibility="gone"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:textColor="@color/colorGrey50"
+                    android:textSize="15dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginLeft="@dimen/margin_extra_large"
+                    android:layout_marginRight="@dimen/margin_extra_large"
+                    android:background="@color/colorLine" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llBooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llCheckBookingCom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_large"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/booking_com_logo" />
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/btnCheckBookingCom"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_circle_solid_blue"
+                        android:scaleType="fitCenter"
+                        android:shadowColor="@color/transparent"
+                        android:text="Check Availability"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorGrey50"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:background="@color/colorLine" />
+
+                <LinearLayout
+                    android:id="@+id/llCheckHostelWorld"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_large"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="23dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/hostel_world_logo" />
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/btnCheckHostelWorld"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_circle_solid_orange"
+                        android:scaleType="fitCenter"
+                        android:text="Check Availability"
+                        android:shadowColor="@color/transparent"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorGrey50"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:background="@color/colorLine" />
+
+                <LinearLayout
+                    android:id="@+id/llCheckAirBnB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_large"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/airbnb_logo" />
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/btnCheckAirBnB"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_circle_solid_red"
+                        android:scaleType="fitCenter"
+                        android:text="Check Availability"
+                        android:shadowColor="@color/transparent"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorGrey50"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llCheckOutInTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCheckinTime"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:text="Check in\nAfter 12:30"
+                        android:textColor="@color/colorGrey900"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tvCheckoutTime"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:text="Check in\nAfter 12:30"
+                        android:textColor="@color/colorGrey900"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_large"
+                    android:background="@color/colorLine" />
+            </LinearLayout>
+
+            <include layout="@layout/content_place_facilities_all" />
+
+            <LinearLayout
+                android:id="@+id/llNote"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:visibility="gone"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvPlaceNote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Things to note"
+                        android:textColor="@color/colorGrey900"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/tvPlaceNoteViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="View all"
+                        android:textColor="@color/colorBlue500"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvNoteContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_large"
+                    android:autoLink="all"
+                    android:maxLines="3"
+                    android:minHeight="100dp"
+                    android:text="note"
+                    android:textColor="@color/colorContent"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayoutMap"
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+                <fragment
+                    android:id="@+id/map"
+                    class="tip.tdc.com.tip.activity.detail.MySupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+
+
+            <include layout="@layout/content_place_contact" />
+        </LinearLayout>
+    </tip.tdc.com.tip.utils.CustomScrollView>
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2017.
+  ~
+  ~ Created by Pham Ngoc Thanh
+  ~ Contact via Email: ngocthanh2207@gmail.com
+  -->
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorGrey50"
+    android:orientation="horizontal"
+    android:padding="@dimen/margin_medium"
+    android:textColor="@color/colorGrey800"
+    android:textSize="18dp"
+    android:gravity="center_vertical"
+    tools:text="Animals starting with A" />

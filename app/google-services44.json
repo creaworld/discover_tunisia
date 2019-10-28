@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "575226533745",
+    "firebase_url": "https://rwanda-destinations.firebaseio.com",
+    "project_id": "rwanda-destinations",
+    "storage_bucket": "rwanda-destinations.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575226533745:android:889a89db0e2d9f35",
+        "android_client_info": {
+          "package_name": "com.rwandadestinations.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575226533745-tt5g2m0eoir7kbac3ug662bj4j5ksduc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rwandadestinations.android",
+            "certificate_hash": "14417c79c88e13b6f2ee359d34cb6f1d041cfcac"
+          }
+        },
+        {
+          "client_id": "575226533745-6qev08pg53r9s4itbi5691g1qquokijl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBmQlo1GEjnQgaqzMREZ8bMc2rxiBMxzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575226533745-6qev08pg53r9s4itbi5691g1qquokijl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

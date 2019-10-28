@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017.
+  ~
+  ~ Created by Pham Ngoc Thanh
+  ~ Contact via Email: ngocthanh2207@gmail.com
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llPlaceTourInfo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/margin_large"
+    android:paddingRight="@dimen/margin_large"
+    android:background="@color/colorGrey100"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/llTourLocation"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imvTour1"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_detail_location" />
+
+            <TextView
+                android:id="@+id/tvTourLocationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_toRightOf="@+id/imvTour1"
+                android:gravity="center_vertical"
+                android:text="Location"
+                android:textColor="@color/colorHeading"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvTourLocationValue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|right"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:text="..."
+                android:textColor="@color/colorContent"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/llTourDuration"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imvTour2"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_detail_duration" />
+
+            <TextView
+                android:id="@+id/tvTourDurationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_toRightOf="@+id/imvTour2"
+                android:gravity="center_vertical"
+                android:text="Duration"
+                android:textColor="@color/colorHeading"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvTourDurationValue"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|right"
+                android:text="..."
+                android:textColor="@color/colorContent"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/llTourLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imvTour3"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_detail_language" />
+
+            <TextView
+                android:id="@+id/tvTourLanguageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:gravity="center_vertical"
+                android:text="Language"
+                android:textColor="@color/colorHeading"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvTourLanguageValue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|right"
+                android:text="..."
+                android:textColor="@color/colorContent"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/llTourTransport"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imvTour4"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_detail_transpot" />
+
+            <TextView
+                android:id="@+id/tvTourTransportTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:gravity="center_vertical"
+                android:text="Transportation"
+                android:textColor="@color/colorHeading"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvTourTransportValue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_extra_large"
+                android:maxLines="3"
+                android:gravity="center_vertical|right"
+                android:text="..."
+                android:textColor="@color/colorContent"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/llTourGroupSize"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imvTour5"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_detail_groupsize" />
+
+            <TextView
+                android:id="@+id/tvTourGroupSizeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_toRightOf="@+id/imvTour5"
+                android:gravity="center_vertical"
+                android:text="Group Size"
+                android:textColor="@color/colorHeading"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvTourGroupSizeValue"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical|right"
+                android:text="..."
+                android:textColor="@color/colorContent"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorLine" />
+    </RelativeLayout>
+
+</LinearLayout>
+

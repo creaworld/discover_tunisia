@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/dialog_holder">
+
+    <LinearLayout
+        style="@style/dialog_background"
+        android:background="@drawable/bg_circle_thin_solid_white_radian20"
+        android:paddingLeft="@dimen/margin_large"
+        android:paddingRight="@dimen/margin_large">
+
+        <TextView
+            android:id="@+id/dialogTitle"
+            style="@style/dialog_title"
+            android:textSize="16dp"
+            android:text="Ask a question or share your tips" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"/>
+        <EditText
+            android:id="@+id/dialogMessage"
+            style="@style/dialog_message"
+            android:layout_height="180dp"
+            android:hint="Type your message"
+            android:textSize="16dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:gravity="left"
+
+            android:textColorHint="@color/colorGrey500"
+            android:textColor="@color/colorGrey800" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonOke"
+                style="@style/dialog_button"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:textColor="@color/colorGrey50"
+                android:background="@drawable/btn_round_login_normal"
+                android:text="Add" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

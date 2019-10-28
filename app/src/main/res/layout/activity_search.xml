@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlue700"
+    android:fitsSystemWindows="true"
+    tools:context="tip.tdc.com.tip.activity.search.SearchActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_h">
+
+        <ImageButton
+            android:id="@+id/topbarLeftBtn"
+            style="@style/btn_back_top_bar"
+            android:background="@color/transparent" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/topbarEdittextSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_toRightOf="@+id/topbarLeftBtn"
+            android:backgroundTint="@color/transparent"
+            android:hint="Search cities"
+            android:textColor="@color/colorGrey50"
+            android:textColorHint="@color/colorBlue800"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textSize="17dp" />
+        <TextView
+            android:id="@+id/topbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:hint="..."
+            android:textColor="@color/colorGrey50"
+            android:textColorHint="@color/colorGrey50"
+            android:textSize="@dimen/top_bar_title" />
+
+        <TextView
+            android:id="@+id/tvSpinner"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|right"
+            android:maxLines="2"
+            android:paddingRight="36dp"
+            android:text="All"
+            android:textColor="@color/colorGrey50"
+            android:textSize="16dp" />
+
+        <tip.tdc.com.tip.activity.search.CustomSpinner
+            android:id="@+id/spinner"
+            style="@style/mySpinnerItemStyle"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/white"
+            android:popupBackground="@color/white" />
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listviewSearchResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rlTopBar"
+        android:background="@color/white"></android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2017.
+  ~
+  ~ Created by Pham Ngoc Thanh
+  ~ Contact via Email: ngocthanh2207@gmail.com
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/colorGrey900" android:state_pressed="true" /> <!-- pressed -->
+    <item android:color="@color/colorGrey900" android:state_focused="true" /> <!-- focused -->
+    <item android:color="@color/white" /> <!-- default -->
+</selector>

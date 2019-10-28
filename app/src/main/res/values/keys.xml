@@ -1,0 +1,17 @@
+<resources>
+    <string name="firebase_url">https://trid-7a6bb.firebaseio.com</string>
+
+    <!-- Your Facebook App ID from your app settings on https://developers.facebook.com/ -->
+    <!-- More details here: https://www.firebase.com/docs/android/guide/login/facebook.html -->
+    <!--<string name="facebook_app_id">1717182294966022</string>-->
+    <!--<string name="fb_login_protocol_scheme">fb1717182294966022</string>-->
+
+    <string name="facebook_app_id">984680774969858</string>
+    <string name="fb_login_protocol_scheme">fb984680774969858</string>
+
+    <!-- Your Twitter consumer key and secret from your app settings on https://apps.twitter.com/ -->
+    <!-- More details here: https://www.firebase.com/docs/android/guide/login/twitter.html -->
+    <string name="twitter_consumer_key">your-twitter-consumer-key</string>
+    <string name="twitter_consumer_secret">your-twitter-consumer-secret</string>
+
+</resources>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017.
+  ~
+  ~ Created by Pham Ngoc Thanh
+  ~ Contact via Email: ngocthanh2207@gmail.com
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rsb="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="tip.tdc.com.tip.activity.filter.FilterActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlTopbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorBlue500">
+
+        <ImageButton
+            android:id="@+id/topbarLeftBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="12dp"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:src="@drawable/btn_close" />
+
+        <TextView
+            android:id="@+id/topbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:hint="..."
+            android:textColor="@color/colorGrey50"
+            android:textColorHint="@color/colorGrey50"
+            android:textSize="@dimen/top_bar_title" />
+
+        <Button
+            android:id="@+id/topbarRightBtnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/top_bar_right_button_h"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@color/transparent"
+            android:gravity="right|center_vertical"
+            android:text="Reset"
+            android:textAllCaps="false"
+            android:textColor="@color/colorGrey50"
+            android:textSize="16dp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnApplyFilter"
+        android:layout_below="@+id/rlTopbar">
+
+        <RelativeLayout
+            android:id="@+id/rlPriceTitle"
+            android:layout_width="match_parent"
+            android:layout_height="54dp">
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/margin_medium"
+                android:text="Price"
+                android:textColor="@color/colorGrey800"
+                android:textSize="18dp" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPriceMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="3dp"
+                android:gravity="right"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:maxLines="1"
+                android:paddingLeft="3dp"
+                android:text="0đ"
+                android:textColor="@color/colorContent"
+
+                android:textSize="16dp"
+                android:visibility="visible" />
+
+            <org.florescu.android.rangeseekbar.RangeSeekBar
+                android:id="@+id/progressbarPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="5"
+                app:showLabels="false"
+                rsb:textAboveThumbsColor="@android:color/holo_purple"
+                rsb:thumbDisabled="@drawable/custom_slider_thumb"
+                rsb:thumbNormal="@drawable/custom_slider_thumb"
+                rsb:thumbPressed="@drawable/custom_slider_thumb"
+                rsb:thumbShadow="true" />
+
+            <TextView
+                android:id="@+id/tvPriceMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:maxLines="1"
+                android:paddingLeft="3dp"
+                android:text="0đ"
+                android:textColor="@color/colorContent"
+                android:textSize="16dp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSubcategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llSeekBar"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="SUBCATEGORY"
+            android:textColor="@color/colorContent"
+            android:textSize="16dp" />
+
+        <ListView
+            android:id="@+id/listviewFilter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvSubcategory"></ListView>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnApplyFilter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorBlue500"
+        android:text="Apply"
+        android:textAllCaps="false"
+        android:textColor="@color/colorGrey50"
+        android:textSize="18sp" />
+</RelativeLayout>

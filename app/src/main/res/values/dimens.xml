@@ -1,0 +1,107 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">120dp</dimen>
+    <dimen name="nav_header_avatar">50dp</dimen>
+    <dimen name="nav_header_username">20dp</dimen>
+    <dimen name="nav_item_menu_height">40dp</dimen>
+    <dimen name="nav_item_menu_thumb">25dp</dimen>
+    <dimen name="nav_item_menu_title">14dp</dimen>
+
+    <!--detail city-->
+    <dimen name="toolbar_detail_expand_height">216dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!--Top bar menu-->
+    <dimen name="top_bar_h">50dp</dimen>
+    <dimen name="top_bar_title">20dp</dimen>
+    <dimen name="top_bar_right_button_w">40dp</dimen>
+    <dimen name="top_bar_right_button_h">40dp</dimen>
+
+    <!--home card-->
+    <dimen name="card_home_city_name">24dp</dimen>
+    <dimen name="card_home_city_fee">24dp</dimen>
+    <dimen name="card_home_city_description">16dp</dimen>
+
+    <!--tip card-->
+    <dimen name="tip_card_h">220dp</dimen>
+    <dimen name="tip_card_w">320dp</dimen>
+    <dimen name="avatar_thumb">40dp</dimen>
+    <dimen name="user_name">16dp</dimen>
+    <dimen name="tip_text_comment">15dp</dimen>
+    <dimen name="tip_date_update">12dp</dimen>
+
+    <!--See do card-->
+    <dimen name="see_do_card_h">185dp</dimen>
+    <dimen name="see_do_location_distance">15dp</dimen>
+    <dimen name="see_do_location_name">20dp</dimen>
+    <dimen name="see_do_location_price">24dp</dimen>
+    <dimen name="see_do_location_info">13dp</dimen>
+
+
+    <!--See do card home screen-->
+    <dimen name="see_do_home_card_h">180dp</dimen>
+    <dimen name="see_do_home_card_w">260dp</dimen>
+    <dimen name="see_do_home_location_distance">13dp</dimen>
+    <dimen name="see_do_home_location_name">18dp</dimen>
+    <dimen name="see_do_home_location_price">13dp</dimen>
+    <dimen name="see_do_home_location_info">12dp</dimen>
+
+    <!--comment item-->
+    <dimen name="margin_comment_message">24dp</dimen>
+
+
+    <dimen name="margin_tiny">2dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_back_button">10dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_extra_large">24dp</dimen>
+    <dimen name="margin_extra_large_2">36dp</dimen>
+
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <!--practical infomation-->
+    <dimen name="practical_row_h">50dp</dimen>
+    <dimen name="practical_row_icon">30dp</dimen>
+    <dimen name="practical_row_text">16dp</dimen>
+
+    <!--acitivity-->
+    <dimen name="activity_title">18dp</dimen>
+
+    <!--Weather activity-->
+    <dimen name="weather_temp_today">15dp</dimen>
+    <dimen name="weather_temp_main">60dp</dimen>
+    <dimen name="weather_temp_thumb">60dp</dimen>
+    <dimen name="weather_status">24dp</dimen>
+    <dimen name="weather_status_detail">80dp</dimen>
+    <dimen name="weather_status_detail_thumb">25dp</dimen>
+    <dimen name="weather_status_detail_text">25dp</dimen>
+
+    <!--weather item-->
+    <dimen name="item_weather_h">90dp</dimen>
+    <dimen name="item_weather_thumb">40dp</dimen>
+    <dimen name="item_weather_text_day">20dp</dimen>
+    <dimen name="item_weather_text_weather">20dp</dimen>
+
+    <!--Login activity-->
+    <dimen name="title_login_btn">18dp</dimen>
+    <dimen name="text_login_btn">16dp</dimen>
+    <dimen name="text_login_edit">20dp</dimen>
+    <dimen name="text_login_edit_h">70dp</dimen>
+
+    <!--padding-->
+    <dimen name="padding_svprogresshuddefault">15dp</dimen>
+    <dimen name="size_minwidth_svprogresshuddefault">120dp</dimen>
+    <dimen name="size_image_bigloading">80dp</dimen>
+    <dimen name="size_image_smallloading">60dp</dimen>
+    <dimen name="radius_svprogresshuddefault">25px</dimen>
+    <dimen name="textSize_svprogresshuddefault_msg">15sp</dimen>
+    <dimen name="margintop_svprogresshuddefault_msg">10dp</dimen>
+</resources>

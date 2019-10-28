@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_large"
+    android:layout_marginRight="@dimen/margin_large"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:text="Practical Infomation" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey300" />
+
+    <RelativeLayout
+        android:id="@+id/rlPracticalTransport"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/practical_row_h">
+
+        <ImageView
+            android:id="@+id/imvPracticalTransport"
+            android:layout_width="@dimen/practical_row_icon"
+            android:layout_height="@dimen/practical_row_icon"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_save"
+            android:tint="@color/colorGrey700" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_toRightOf="@+id/imvPracticalTransport"
+            android:text="Transport"
+            android:textColor="@color/colorGrey700"
+            android:textSize="@dimen/practical_row_text" />
+
+        <ImageView
+            android:layout_width="@dimen/practical_row_icon"
+            android:layout_height="@dimen/practical_row_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_save"
+            android:tint="@color/colorBlue700" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey300" />
+
+    <RelativeLayout
+        android:id="@+id/rlPracticalEmergency"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/practical_row_h">
+
+        <ImageView
+            android:id="@+id/imvPracticalEmergency"
+            android:layout_width="@dimen/practical_row_icon"
+            android:layout_height="@dimen/practical_row_icon"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_save"
+            android:tint="@color/colorGrey700" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_toRightOf="@+id/imvPracticalEmergency"
+            android:text="Emergency"
+            android:textColor="@color/colorGrey700"
+            android:textSize="@dimen/practical_row_text" />
+
+        <ImageView
+            android:layout_width="@dimen/practical_row_icon"
+            android:layout_height="@dimen/practical_row_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_save"
+            android:tint="@color/colorBlue700" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey300" />
+
+
+    <RelativeLayout
+        android:id="@+id/rlPracticalMoreAbout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/practical_row_h">
+
+        <ImageView
+            android:id="@+id/imvPracticalMoreAbout"
+            android:layout_width="@dimen/practical_row_icon"
+            android:layout_height="@dimen/practical_row_icon"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_save"
+            android:tint="@color/colorGrey700" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_toRightOf="@+id/imvPracticalMoreAbout"
+            android:text="Get to know Some where"
+            android:textColor="@color/colorGrey700"
+            android:textSize="@dimen/practical_row_text" />
+
+        <ImageView
+            android:layout_width="@dimen/practical_row_icon"
+            android:layout_height="@dimen/practical_row_icon"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_save"
+            android:tint="@color/colorBlue700" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey300" />
+</LinearLayout>

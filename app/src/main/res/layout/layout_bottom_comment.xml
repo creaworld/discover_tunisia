@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/top_bar_h"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:id="@+id/llLoveComment"
+        android:layout_width="wrap_content"
+
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/imvLoveStatus"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_love" />
+
+        <TextView
+            android:id="@+id/tvNumberLove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:text="10"
+            android:textColor="@color/colorGrey700"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imvCommentStatus"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:padding="2dp"
+            android:src="@drawable/icon_review"
+            android:tint="@color/colorBlue500" />
+
+        <TextView
+            android:id="@+id/tvNumberComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:text="10 reviews"
+            android:textColor="@color/colorBlue500"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imvShare"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_extra_large"
+        android:padding="2dp"
+        android:src="@drawable/icon_share"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/rlShare"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:layout_marginRight="@dimen/margin_extra_large">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:padding="2dp"
+            android:src="@drawable/write_review_3x"
+            android:layout_marginRight="@dimen/margin_small"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvWriteComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Write comment"
+            android:textColor="@color/colorBlue500"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorGrey500" />
+</RelativeLayout>

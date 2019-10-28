@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "741824820622",
+    "firebase_url": "https://ontt-a55ec.firebaseio.com",
+    "project_id": "ontt-a55ec",
+    "storage_bucket": "ontt-a55ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741824820622:android:d054a8b0d0224a4ee360df",
+        "android_client_info": {
+          "package_name": "com.streamerz.ontt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741824820622-mo914cpj2ilnc66kpbj9psnjdtkj6dt2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe8MRKUeSS01PQO4276JuMM1S_wuu8lV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741824820622-mo914cpj2ilnc66kpbj9psnjdtkj6dt2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

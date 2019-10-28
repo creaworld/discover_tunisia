@@ -1,0 +1,17 @@
+<!--
+  ~ Copyright (c) 2016. Created by PNT
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RootMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/transparent" />
+
+</RelativeLayout>

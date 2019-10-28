@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/see_do_card_h"
+        android:background="@color/transparent"
+        android:orientation="vertical"
+        tools:ignore="overdraw">
+
+        <ImageView
+            android:id="@+id/imvBanner"
+            android:visibility="gone"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <RelativeLayout
+            android:id="@+id/rlPlaceInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imvCityThumb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_default"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/imvCityThumbMask"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mask_location_thumb"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvCityDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tvCityName"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:text="City description"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/see_do_location_distance"
+                    android:visibility="visible"
+                    tools:ignore="UnusedAttribute" />
+
+                <TextView
+                    android:id="@+id/tvCityName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/llLoveComment"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:text="City Name"
+                    android:textColor="@color/colorGrey50"
+                    android:textSize="@dimen/see_do_location_name"
+                    tools:ignore="UnusedAttribute" />
+
+                <TextView
+                    android:id="@+id/tvCityFee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:gravity="center_vertical"
+                    android:text="Free"
+                    android:textColor="@color/colorGrey50"
+                    android:textSize="@dimen/see_do_location_price"
+                    tools:ignore="UnusedAttribute" />
+
+                <LinearLayout
+                    android:id="@+id/llLoveComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/llTimeOpening"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/imvClock"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/icon_clock" />
+
+                        <TextView
+                            android:id="@+id/tvTimeOpenning"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:layout_marginRight="@dimen/margin_large"
+                            android:text="7:00 - 19:00"
+                            android:textColor="@color/colorGrey50"
+                            android:textSize="@dimen/see_do_location_info" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llTourInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/margin_small"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:padding="@dimen/margin_tiny"
+                            android:src="@drawable/icon_clock" />
+
+                        <TextView
+                            android:id="@+id/tvTourTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:layout_marginRight="@dimen/margin_large"
+                            android:text="7 hours"
+                            android:textColor="@color/colorGrey50"
+                            android:textSize="@dimen/see_do_location_info" />
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:padding="@dimen/margin_tiny"
+                            android:src="@drawable/icon_tour_size" />
+
+                        <TextView
+                            android:id="@+id/tvTourSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:layout_marginRight="@dimen/margin_large"
+                            android:text="7 hours"
+                            android:textColor="@color/colorGrey50"
+                            android:textSize="@dimen/see_do_location_info" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imvLoveStatus"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/icon_love" />
+
+                    <TextView
+                        android:id="@+id/tvNumberLove"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:layout_marginRight="@dimen/margin_large"
+                        android:text="10"
+                        android:textColor="@color/colorGrey50"
+                        android:textSize="@dimen/see_do_location_info" />
+
+                    <ImageView
+                        android:id="@+id/imvCommentStatus"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:src="@drawable/icon_review"
+                        android:tint="@color/colorBlue500" />
+
+                    <TextView
+                        android:id="@+id/tvNumberComment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:text="10"
+                        android:textColor="@color/colorGrey50"
+                        android:textSize="@dimen/see_do_location_info" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/imvSaveStatus"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:padding="@dimen/margin_small"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_save" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

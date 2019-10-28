@@ -1,0 +1,128 @@
+<!--
+  ~ Copyright (c) 2017.
+  ~
+  ~ Created by Pham Ngoc Thanh
+  ~ Contact via Email: ngocthanh2207@gmail.com
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context="tip.tdc.com.tip.activity.askNshare.AskShareActivity">
+
+    <RelativeLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorBlue500">
+
+        <include layout="@layout/layout_top_bar" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llCategory1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topbar"
+        android:layout_above="@+id/llMenuAddTip"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:id="@+id/rlRecentTip"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvRecentTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Questions"
+                    android:textColor="@color/colorBlue500"
+                    android:textSize="18dp" />
+
+                <View
+                    android:id="@+id/viewRecentTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorBlue500" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlTopTip"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvTopTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Tips"
+                    android:textColor="@color/colorGrey600"
+                    android:textSize="18dp" />
+
+                <View
+                    android:id="@+id/viewTopTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorGrey300" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMenuAddTip"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorBlue500"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imbAddTip"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@color/transparent"
+            android:clickable="false"
+            android:padding="4dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tab_menu_plus"
+            android:tint="@color/colorGrey50" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:clickable="false"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:text="Ask"
+            android:textColor="@color/colorGrey50"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</RelativeLayout>
