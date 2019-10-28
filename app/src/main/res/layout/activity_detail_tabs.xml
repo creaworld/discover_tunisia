@@ -257,9 +257,10 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="1000dp"
+                    android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:layout_below="@+id/rlbounderMap"
+                    android:layout_marginBottom="10dp"
                     android:id="@+id/home_frame_layout"/>
             </LinearLayout>
 
@@ -269,7 +270,7 @@
         <RelativeLayout
             android:id="@+id/rlBottomMenu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+           android:layout_height="wrap_content"
             android:layout_gravity="bottom">
 
             <View

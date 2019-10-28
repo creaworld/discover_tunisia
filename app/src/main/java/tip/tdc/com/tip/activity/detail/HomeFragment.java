@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment {
 
     public void setCats(List<CategoryInfo> cats) {
         this.cats.addAll(cats);
-        cats.remove(0);
+        this.cats.remove(0);
         staysGVAdapter.notifyDataSetChanged();
     }
 

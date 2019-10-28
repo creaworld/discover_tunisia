@@ -684,7 +684,7 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
     public void onBackPressed() {
         FragmentManager fm = getSupportFragmentManager();
 
-        if(fm.getBackStackEntryCount() > 1){
+        if(fm.getBackStackEntryCount() > 0){
             fm.popBackStack();
         } else{
             super.onBackPressed();
