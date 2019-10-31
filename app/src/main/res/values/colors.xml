@@ -67,6 +67,8 @@
     <color name="roundColor_svprogresshuddefault">#e5e5e5</color>
     <color name="roundProgressColor_svprogresshuddefault">@android:color/black</color>
 
+    <color name="blue_grey">#87AAAE</color>
+
     <!--Login -->
     <color name="btn_login_bg_normal">#2196F1</color>
     <color name="login_btn">#dd8e08</color>

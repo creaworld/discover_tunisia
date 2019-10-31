@@ -8,7 +8,9 @@
         <!--status bar-->
         <item name="colorPrimaryDark">@color/colorBlue500</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
+
 
     <style name="ActionBar.Solid.GreenStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
         <item name="android:background">@color/colorBlue500</item>

@@ -36,7 +36,8 @@ android {
     compileSdkVersion 26
     buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId          "com.streamerz.ontt" //"com.rwandadestinations.android" //com.bpackingapp.vietnam.travel
+        applicationId "com.streamerz.ontt"
+        //"com.rwandadestinations.android" //com.bpackingapp.vietnam.travel
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 18
@@ -50,8 +51,10 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
-            shrinkResources false
+            /*minifyEnabled false
+            shrinkResources false*/
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             proguardFiles getDefaultProguardFile('proguard-android.txt')
 
@@ -142,6 +145,12 @@ dependencies {
 
     //caroussel view
     implementation 'com.synnapps:carouselview:0.1.5'
+
+    implementation('info.androidhive:fontawesome:0.0.5') {
+        transitive = false
+    }
+
+    implementation 'com.github.gmazzo:fontawesome:0.4'
 
 
 }

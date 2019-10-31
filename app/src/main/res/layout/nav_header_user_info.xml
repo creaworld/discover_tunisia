@@ -1,72 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/nav_header_height"
-    android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <LinearLayout
-        android:id="@+id/llHeaderUserProfile"
+<RelativeLayout android:layout_height="wrap_content"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"  android:layout_width="match_parent">
+
+
+    <ImageView
+        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/nav_header_height"
+        android:foreground="@drawable/img_layer"
+        android:id="@+id/blur_profile_iv"/>
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:visibility="visible">
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:id="@+id/drawer_header_ll"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imvUserAvatar"
-            android:layout_width="@dimen/nav_header_avatar"
-            android:layout_height="@dimen/nav_header_avatar"
-            app:srcCompat="@drawable/ic_man_gray" />
-
-        <TextView
-            android:id="@+id/tvMenuUserName"
+        <LinearLayout
+            android:id="@+id/llHeaderUserProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_medium"
-            android:maxLines="2"
-            android:text="Android Studio"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="@dimen/nav_header_username" />
+            android:layout_height="@dimen/nav_header_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imvUserAvatar"
+                android:layout_width="@dimen/nav_header_avatar"
+                android:layout_height="@dimen/nav_header_avatar"
+                app:srcCompat="@drawable/ic_man_gray" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.9"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:textStyle="bold"
+                    android:text="Android Studio"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="@dimen/nav_header_username" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/nav_header_user_adr"
+                    android:textColor="@color/white"
+                    android:maxLength="30"
+                    android:ellipsize="end"
+                    android:id="@+id/user_adr_tv"
+                    android:layout_marginTop="@dimen/margin_small"/>
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_height="wrap_content"
+                android:src="@drawable/star_toggle" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llHeaderLogin"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_btn_circle_stroke_white"
+                android:text="@string/title_login_btn_menu"
+                android:textAllCaps="false"
+                android:textColor="@color/colorGrey50"
+                android:textSize="16dp" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:background="@color/transparent" />
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="@dimen/margin_small"
+                android:background="@drawable/bg_btn_circle_stroke_white"
+                android:text="@string/title_signup_btn_menu"
+                android:textAllCaps="false"
+                android:textColor="@color/colorGrey50"
+                android:textSize="16dp" />
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/llHeaderLogin"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:background="@drawable/bg_btn_circle_stroke_white"
-            android:text="@string/title_login_btn_menu"
-            android:textAllCaps="false"
-            android:textColor="@color/colorGrey50"
-            android:textSize="16dp" />
+</RelativeLayout>
 
-        <View
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:background="@color/transparent" />
-
-        <Button
-            android:id="@+id/btnSignUp"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_marginRight="@dimen/margin_small"
-            android:background="@drawable/bg_btn_circle_stroke_white"
-            android:text="@string/title_signup_btn_menu"
-            android:textAllCaps="false"
-            android:textColor="@color/colorGrey50"
-            android:textSize="16dp" />
-    </LinearLayout>
-</LinearLayout>

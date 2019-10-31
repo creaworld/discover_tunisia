@@ -20,8 +20,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +38,7 @@ import com.nhaarman.listviewanimations.appearance.AnimationAdapter;
 import com.nhaarman.listviewanimations.appearance.simple.ScaleInAnimationAdapter;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -58,7 +61,9 @@ import tip.tdc.com.tip.utils.LoggerFactory;
 import tip.tdc.com.tip.utils.SVprogressHUD.SVProgressHUD;
 import tip.tdc.com.tip.utils.SVprogressHUD.SVProgressInstance;
 import tip.tdc.com.tip.utils.Utils;
+
 import com.bpackingapp.vietnam.travel.R;
+
 import tip.tdc.com.tip.activity.detail.DetailTabsActivity;
 import tip.tdc.com.tip.activity.information.AboutActivity;
 import tip.tdc.com.tip.activity.information.PrivacyActivity;
@@ -90,8 +95,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     View menuVisaOnline, menuBookTicket, menuAllCity;
 
     // User info in menu
-    ImageView imvUserAvatar;
-    TextView tvMenuUserName;
+    ImageView imvUserAvatar, userBgIv;
+    TextView tvMenuUserName, userAdrTv;
     View llHeaderUserProfile, llHeaderLogin;
 
     //    private DatabaseReference mCityReference;
@@ -110,8 +115,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
 
-
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mContext = HomeActivity.this;
@@ -128,11 +131,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+
+        toggle.setDrawerIndicatorEnabled(false);
+        toggle.setHomeAsUpIndicator(R.drawable.ic_toggle_menu);
+
+        toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawer.isDrawerVisible(GravityCompat.START)) {
+                    drawer.closeDrawer(GravityCompat.START);
+                } else {
+                    drawer.openDrawer(GravityCompat.START);
+                }
+            }
+        });
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -148,7 +166,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         }, 2000);
 
-        if (AppSetting.getInstant(mContext).getOpenCount() %5 == 0 && !AppSetting.getInstant(mContext).isAppRated()) {
+        if (AppSetting.getInstant(mContext).getOpenCount() % 5 == 0 && !AppSetting.getInstant(mContext).isAppRated()) {
             DialogRate dialogRate = new DialogRate();
             dialogRate.buildDialog(DialogRate.TYPE_LIKE, mContext, null);
             dialogRate.show();
@@ -213,12 +231,40 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         tvMenuUserName = (TextView) findViewById(R.id.tvMenuUserName);
         FontUtils.setFont(tvMenuUserName, FontUtils.TYPE_NORMAL);
 
+        userAdrTv = findViewById(R.id.user_adr_tv);
+        userBgIv = findViewById(R.id.blur_profile_iv);
+
+        Spinner spinner = findViewById(R.id.nav_lang_sp);
+
+        List<String> langs = new ArrayList<>();
+
+        langs.add("Languages");
+        langs.add("English");
+        langs.add("Français");
+        langs.add("العربية");
+
+        spinner.setPrompt("Languages");
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                R.layout.spinner_item_lang_white, langs);
+
+        spinner.setAdapter(dataAdapter);
+
+        dataAdapter.setDropDownViewResource(R.layout.spinner_item_lang_dropdown);
+
 
         llHeaderLogin = findViewById(R.id.llHeaderLogin);
         FontUtils.setFont(findViewById(R.id.btnLogin), FontUtils.TYPE_NORMAL);
         FontUtils.setFont(findViewById(R.id.btnSignUp), FontUtils.TYPE_NORMAL);
 
         listviewCities = (ListView) findViewById(R.id.listviewCities);
+
+        findViewById(R.id.discover_now_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                findViewById(R.id.include_discover).setVisibility(View.GONE);
+            }
+        });
 
         listviewCities.setDivider(null);
         listviewCities.setDividerHeight(0);
@@ -340,9 +386,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
 
 
-
-
-
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().addTestDevice("69BCA36FEFDE7BEF821BF6DBAEFC7952").build();
         mAdView.loadAd(adRequest);
@@ -356,31 +399,27 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onAdFailedToLoad(int i) {
                 super.onAdFailedToLoad(i);
-                Log.e("error-->>" ,"error code"+i);
+                Log.e("error-->>", "error code" + i);
             }
         });
-
-
-
 
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.fullScreen));
         mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("69BCA36FEFDE7BEF821BF6DBAEFC7952").build());
 
-        mInterstitialAd.setAdListener(new AdListener(){
+        mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdFailedToLoad(int i) {
-                Log.e("error-->>" ,"error code"+i);
+                Log.e("error-->>", "error code" + i);
 
             }
 
             @Override
             public void onAdLoaded() {
-                Log.e("error-->>" ,"onload");
+                Log.e("error-->>", "onload");
             }
         });
-
 
 
     }
@@ -407,12 +446,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
                 Toast.makeText(mContext, "Loading ...", Toast.LENGTH_SHORT).show();
 
-                    FCity fCity = fCities.get(i);
-                    Intent intent = new Intent(HomeActivity.this, DetailTabsActivity.class);
-                    intent.putExtra(AppConstants.KEY_INTENT_CITY_KEY, fCity.getCityKey());
-                    intent.putExtra(AppConstants.KEY_INTENT_CITY, fCity);
-                    startActivity(intent);
-                    ((Activity) mContext).overridePendingTransition(R.anim.activity_enter_back, R.anim.activity_exit_back);
+                FCity fCity = fCities.get(i);
+                Intent intent = new Intent(HomeActivity.this, DetailTabsActivity.class);
+                intent.putExtra(AppConstants.KEY_INTENT_CITY_KEY, fCity.getCityKey());
+                intent.putExtra(AppConstants.KEY_INTENT_CITY, fCity);
+                startActivity(intent);
+                ((Activity) mContext).overridePendingTransition(R.anim.activity_enter_back, R.anim.activity_exit_back);
 
             }
         });
@@ -539,22 +578,32 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     AppState.currentBpackUser = TipApplication.getTipApplication().userService.getUserById(AppState.currentFireUser.getUid());
                 }
 
-                if (AppState.currentBpackUser != null) {
+                else if (AppState.currentBpackUser != null) {
                     tvMenuUserName.setText(AppState.currentBpackUser.getName());
                 } else if (AppState.currentFireUser.getDisplayName() != null && AppState.currentFireUser.getDisplayName().length() > 0) {
                     tvMenuUserName.setText(AppState.currentFireUser.getDisplayName());
+
                 } else if (AppState.currentFireUser.getEmail() != null) {
-                    tvMenuUserName.setText(AppState.currentFireUser.getEmail());
+                    tvMenuUserName.setText(AppState.currentFireUser.getDisplayName());
+                    userAdrTv.setText(AppState.currentBpackUser.getEmail());
                 }
 
                 if (AppState.photo_url != null) {
+                    userBgIv.setVisibility(View.VISIBLE);
                     ImageLoader.getInstance().displayImage(AppState.photo_url, imvUserAvatar, TipApplication.defaultOptions);
+                    ImageLoader.getInstance().displayImage(AppState.photo_url, userBgIv, TipApplication.defaultOptions);
                 } else if (AppState.currentBpackUser != null && AppState.currentBpackUser.getAvatar() != null && AppState.currentBpackUser.getAvatar() != null && AppState.currentBpackUser.getAvatar().contains("http")) {
+                    userBgIv.setVisibility(View.VISIBLE);
                     ImageLoader.getInstance().displayImage(AppState.currentBpackUser.getAvatar().replace("http:", "https:"), imvUserAvatar, TipApplication.defaultOptions);
+                    ImageLoader.getInstance().displayImage(AppState.currentBpackUser.getAvatar().replace("http:", "https:"), userBgIv, TipApplication.defaultOptions);
                 } else if (AppState.currentFireUser.getPhotoUrl() != null && AppState.currentFireUser.getPhotoUrl().getPath() != null && AppState.currentFireUser.getPhotoUrl().getPath().contains("http")) {
+                    userBgIv.setVisibility(View.VISIBLE);
                     ImageLoader.getInstance().displayImage(AppState.currentFireUser.getPhotoUrl().getPath(), imvUserAvatar, TipApplication.defaultOptions);
+                    ImageLoader.getInstance().displayImage(AppState.currentFireUser.getPhotoUrl().getPath(), userBgIv, TipApplication.defaultOptions);
                 } else {
+                    userBgIv.setVisibility(View.VISIBLE);
                     imvUserAvatar.setImageResource(R.drawable.avatar_default);
+                    userBgIv.setImageResource(R.drawable.logo_tn);
                 }
             } else {
                 LoggerFactory.d("HOME", "USER NULL");
@@ -565,6 +614,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         } catch (Exception e) {
             LoggerFactory.logStackTrace(e);
+
+            Log.e("exccccccept", e.getMessage());
         }
     }
 

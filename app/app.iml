@@ -213,5 +213,7 @@
     <orderEntry type="library" name="Gradle: org.solovyev.android.views:linear-layout-manager:0.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.maps.android:android-maps-utils:0.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.synnapps:carouselview:0.1.5@aar" level="project" />
+    <orderEntry type="library" name="Gradle: info.androidhive:fontawesome:0.0.5@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.gmazzo:fontawesome:0.4@aar" level="project" />
   </component>
 </module>

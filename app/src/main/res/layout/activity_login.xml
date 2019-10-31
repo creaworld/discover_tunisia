@@ -16,6 +16,7 @@
         android:layout_alignParentTop="true"
         android:padding="10dp"
         android:src="@drawable/mr_dialog_close_light"
+        android:visibility="gone"
         android:tint="@color/colorGrey900" />
 
     <LinearLayout
@@ -38,7 +39,6 @@
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="50dp"
             android:src="@drawable/logo_tn_color"/>
 
 
@@ -52,8 +52,11 @@
                 android:id="@+id/email_login_form"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
                 android:layout_marginLeft="@dimen/margin_extra_large"
                 android:layout_marginRight="@dimen/margin_extra_large"
+                android:paddingRight="@dimen/margin_extra_large"
+                android:paddingLeft="@dimen/margin_extra_large"
                 android:orientation="vertical">
 
 
@@ -121,24 +124,35 @@
                         android:orientation="vertical"
                         android:visibility="gone">
 
-                        <android.support.design.widget.TextInputLayout
+
+
+                        <AutoCompleteTextView
+                            android:id="@+id/email"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="50dp"
                             android:background="@drawable/bg_edit_text"
-                            android:layout_gravity="center_vertical">
+                            android:hint="@string/prompt_email"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:layout_marginBottom="20dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/blue_grey" />
 
-                            <AutoCompleteTextView
-                                android:id="@+id/email"
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:background="@null"
-                                android:hint="@string/prompt_email"
-                                android:inputType="textEmailAddress"
-                                android:maxLines="1"
-                                android:textColor="@color/black"
-                                android:textColorHint="@color/colorPrimary" />
+                        <EditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="@string/prompt_password"
+                            android:background="@drawable/bg_edit_text"
+                            android:imeActionId="@+id/login"
+                            android:imeActionLabel="@string/action_sign_in_short"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/blue_grey" />
 
-                        </android.support.design.widget.TextInputLayout>
 
                         <!--<LinearLayout
                             android:layout_width="match_parent"
@@ -188,42 +202,18 @@
 
                         </LinearLayout>-->
 
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/bg_edit_text"
-                            android:layout_marginTop="20dp"
-                            >
-
-                            <EditText
-                                android:id="@+id/password"
-                                android:layout_width="match_parent"
-                                android:layout_height="49dp"
-                                android:background="@null"
-                                android:hint="@string/prompt_password"
-                                android:imeActionId="@+id/login"
-                                android:imeActionLabel="@string/action_sign_in_short"
-                                android:imeOptions="actionUnspecified"
-                                android:inputType="textPassword"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:textColor="@color/black"
-                                android:textColorHint="@color/colorPrimary" />
-
-                        </android.support.design.widget.TextInputLayout>
-
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/action_forgot_password"
-    android:layout_gravity="end"
-    android:layout_marginTop="10dp"
-    android:textAllCaps="false"
-    style="?android:textAppearanceSmall"
-    android:id="@+id/btnForgotPassword"
-    android:shadowColor="@color/transparent"
-    android:background="@color/transparent"
-    android:textColor="@color/colorPrimary"/>
+                         <Button
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/action_forgot_password"
+                             android:layout_gravity="end"
+                             android:textAllCaps="false"
+                             style="?android:textAppearanceSmall"
+                             android:textStyle="bold"
+                             android:id="@+id/btnForgotPassword"
+                             android:shadowColor="@color/transparent"
+                             android:background="@color/transparent"
+                             android:textColor="@color/colorGrey500"/>
 
                         <!--<LinearLayout
                             android:layout_width="match_parent"
@@ -283,7 +273,6 @@
                             android:background="@drawable/btn_round_login_normal"
                             android:shadowColor="@color/transparent"
                             android:text="@string/action_sign_in"
-                            android:textAllCaps="false"
                             android:textColor="@color/colorGrey50"
                             android:shadowDx="0"
                             android:shadowDy="0"
@@ -291,10 +280,12 @@
                             android:backgroundTint="@color/login_btn"
                             android:textStyle="bold" />
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
                             android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            android:paddingLeft="20dp"
                             android:background="@drawable/indi_btn_facebook_login_bg"
                             android:gravity="center_vertical">
 
@@ -304,7 +295,6 @@
                                 android:layout_height="30dp"
                                 android:layout_centerVertical="true"
                                 android:layout_marginRight="@dimen/margin_medium"
-                                android:layout_toLeftOf="@+id/btnLoginFb"
                                 android:scaleType="fitCenter"
                                 android:src="@drawable/ic_fb_solid"
                                 android:visibility="visible" />
@@ -318,6 +308,7 @@
                                 android:gravity="center_horizontal|center_vertical"
                                 android:text="Continue with Facebook"
                                 android:textAllCaps="false"
+                                android:layout_marginLeft="13dp"
                                 android:textColor="@color/colorGrey50"
                                 android:textSize="16dp"
                                 android:visibility="visible" />
@@ -333,25 +324,25 @@
                                 android:background="@color/transparent"
                                 android:gravity="center_vertical|center_horizontal"
                                 android:visibility="gone" />
-                        </RelativeLayout>
+                        </LinearLayout>
 
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/bg_edit_text">
+                                android:background="@drawable/bg_spinner">
 
                                 <Spinner
                                     android:id="@+id/lang_spinner"
                                     android:layout_width="wrap_content"
-                                    android:backgroundTint="@color/colorPrimary"
+                                    android:backgroundTint="@color/facebook_btn"
                                     android:layout_height="wrap_content"/>
 
                             </RelativeLayout>
@@ -360,10 +351,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/register"
-                                android:layout_marginLeft="30dp"
+                                android:layout_marginLeft="10dp"
+                                android:maxLines="1"
                                 android:textStyle="bold"
+                                android:textSize="12dp"
                                 android:id="@+id/btnSignupInput"
-                                android:textColor="@color/colorPrimary"
+                                android:textColor="@color/facebook_btn"
                                 android:background="@color/transparent" />
                         </LinearLayout>
 
@@ -373,7 +366,7 @@
                             android:background="@color/transparent"
                             android:text="@string/action_skip"
                             android:shadowColor="@color/transparent"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/blue_grey"
                             android:id="@+id/skip_btn"
                             android:layout_marginBottom="40dp"
                             android:layout_gravity="center_horizontal"
@@ -387,89 +380,62 @@
                         android:orientation="vertical">
 
 
-                        <android.support.design.widget.TextInputLayout
+                        <EditText
+                            android:id="@+id/signupUsername"
                             android:layout_width="match_parent"
-                            android:background="@drawable/bg_edit_text"
-                            android:layout_height="match_parent">
-
-                            <EditText
-                                android:id="@+id/signupUsername"
-                                android:layout_width="match_parent"
-                                android:layout_height="35dp"
-                                android:background="@null"
-                                android:hint="@string/prompt_full_name"
-                                android:inputType="textPersonName"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:textColor="@color/black"
-                                android:textColorHint="@color/colorIcon" />
-
-                        </android.support.design.widget.TextInputLayout>
-
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:background="@drawable/bg_edit_text"
+                            android:layout_height="50dp"
+                            android:hint="@string/prompt_full_name"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
                             android:layout_marginTop="20dp"
-                            android:layout_height="match_parent">
-
-                            <AutoCompleteTextView
-                                android:id="@+id/signupEmail"
-                                android:layout_width="match_parent"
-                                android:layout_height="35dp"
-                                android:background="@null"
-                                android:hint="@string/prompt_email"
-                                android:inputType="textEmailAddress"
-                                android:maxLines="1"
-                                android:textColor="@color/black"
-
-                                android:textColorHint="@color/colorIcon" />
-
-                        </android.support.design.widget.TextInputLayout>
-
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
                             android:background="@drawable/bg_edit_text"
-                            android:layout_marginTop="20dp"
-                            android:layout_height="match_parent">
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/colorIcon" />
 
-                            <EditText
-                                android:id="@+id/signupPassword"
-                                android:layout_width="match_parent"
-                                android:layout_height="35dp"
-                                android:background="@null"
-                                android:hint="@string/prompt_password"
-                                android:imeActionId="@+id/login"
-                                android:imeActionLabel="@string/action_sign_in_short"
-                                android:imeOptions="actionUnspecified"
-                                android:inputType="textPassword"
-                                android:maxLines="1"
-                                android:textColor="@color/black"
-                                android:textColorHint="@color/colorIcon" />
-
-                        </android.support.design.widget.TextInputLayout>
-
-
-                        <android.support.design.widget.TextInputLayout
+                        <AutoCompleteTextView
+                            android:id="@+id/signupEmail"
                             android:layout_width="match_parent"
-                            android:background="@drawable/bg_edit_text"
+                            android:layout_height="50dp"
+                            android:hint="@string/prompt_email"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
                             android:layout_marginTop="20dp"
-                            android:layout_height="match_parent">
+                            android:textColor="@color/black"
+                            android:background="@drawable/bg_edit_text"
+                            android:textColorHint="@color/colorIcon" />
 
-                            <EditText
-                                android:id="@+id/signupPasswordConfirm"
-                                android:layout_width="match_parent"
-                                android:layout_height="35dp"
-                                android:background="@color/transparent"
-                                android:hint="@string/prompt_password_confirm"
-                                android:imeActionId="@+id/login"
-                                android:imeActionLabel="@string/action_sign_in_short"
-                                android:imeOptions="actionUnspecified"
-                                android:inputType="textPassword"
-                                android:maxLines="1"
-                                android:textColor="@color/black"
-                                android:textColorHint="@color/colorIcon" />
 
-                        </android.support.design.widget.TextInputLayout>
+                        <EditText
+                            android:id="@+id/signupPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/bg_edit_text"
+                            android:hint="@string/prompt_password"
+                            android:imeActionId="@+id/login"
+                            android:imeActionLabel="@string/action_sign_in_short"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/colorIcon" />
+
+                        <EditText
+                            android:id="@+id/signupPasswordConfirm"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_edit_text"                                android:hint="@string/prompt_password_confirm"
+                            android:imeActionId="@+id/login"
+                            android:imeActionLabel="@string/action_sign_in_short"
+                            android:imeOptions="actionUnspecified"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:visibility="gone"
+                            android:layout_marginTop="20dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/colorIcon" />
+
 
 
                         <!-- <LinearLayout
@@ -656,7 +622,7 @@
                             android:id="@+id/btnSignUp"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:layout_marginTop="@dimen/margin_extra_large_2"
+                            android:layout_marginTop="45dp"
                             android:background="@drawable/btn_round_login_normal"
                             android:text="@string/action_sign_up"
                             android:textAllCaps="false"
@@ -679,8 +645,8 @@
                             android:textAllCaps="true"
                             android:text="@string/action_view_terms"
                             android:id="@+id/terms_btn"
-                            android:layout_marginBottom="20dp"
-                            android:textColor="@color/colorPrimary"/>
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@color/blue_grey"/>
 
                         <Button
                             android:background="@color/transparent"
@@ -694,7 +660,7 @@
                             android:text="@string/action_back"
                             android:id="@+id/btnLoginInput"
                             android:layout_marginBottom="40dp"
-                            android:textColor="@color/colorPrimary"/>
+                            android:textColor="@color/blue_grey"/>
 
                         <!--<TextView
                             android:id="@+id/tvTermCondition"

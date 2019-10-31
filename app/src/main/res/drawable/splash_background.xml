@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item>
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
 
@@ -11,18 +9,3 @@
                 android:startColor="@color/start_bg" />
 
         </shape>
-    </item>
-
-    <item>
-        <scale
-            android:scaleHeight="1dp"
-            android:drawable="@drawable/logo_tn"
-            android:level="1"
-            android:scaleWidth="1sp">
-            <!--<bitmap
-                android:gravity="center"
-                android:src="@drawable/logo_tn" />-->
-        </scale>
-    </item>
-
-</layer-list>

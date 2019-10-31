@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#discovertunisia"
+                android:textColor="@color/login_btn"
+                android:textStyle="bold|italic"
+                android:layout_marginTop="50dp"
+                android:textSize="40dp"/>
+
+            <GridView
+                android:layout_marginTop="80dp"
+                android:id="@+id/images_grid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:columnWidth="100dp"
+                android:background="@color/white"
+                android:numColumns="auto_fit"
+                android:verticalSpacing="24dp"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="spacingWidthUniform"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

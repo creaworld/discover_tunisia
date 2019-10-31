@@ -250,6 +250,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         langSpinner= findViewById(R.id.lang_spinner);
         List<String> langs = new ArrayList<>();
 
+        langs.add("Languages");
         langs.add("English");
         langs.add("Français");
         langs.add("العربية");
@@ -257,11 +258,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         langSpinner.setPrompt("Languages");
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, langs);
+                R.layout.spinner_item_lang, langs);
 
         langSpinner.setAdapter(dataAdapter);
 
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter.setDropDownViewResource(R.layout.spinner_item_lang_dropdown);
 
         skipBtn = findViewById(R.id.skip_btn);
         conditionsBtn = findViewById(R.id.terms_btn);
@@ -845,10 +846,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             return;
         }
 
-        if (!password.equals(passConfirm)) {
+       /* if (!password.equals(passConfirm)) {
             Toast.makeText(mContext, "Password not match", Toast.LENGTH_SHORT).show();
             return;
-        }
+        }*/
 
         if(userService.isLoaded) {
             if(userService.getUserByEmail(email) != null) {

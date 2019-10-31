@@ -10,11 +10,15 @@
     tools:showIn="@layout/app_bar_main">
 
 
+
     <ListView
         android:layout_above="@+id/adView"
         android:id="@+id/listviewCities"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
+
+    <include layout="@layout/include_discover_tunisia"
+        android:id="@+id/include_discover"/>
 
 
     <com.google.android.gms.ads.AdView

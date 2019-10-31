@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="0.8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="À la une"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="@dimen/margin_extra_large"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"/>
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="5px"
+            android:alpha="0.5"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@color/white" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Actualités"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="@dimen/margin_extra_large"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"/>
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="5px"
+            android:alpha="0.5"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@color/white" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Mon séjour"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="@dimen/margin_extra_large"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"/>
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="5px"
+            android:alpha="0.5"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@color/white" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Les incontournables"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="@dimen/margin_extra_large"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"/>
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="5px"
+            android:alpha="0.5"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@color/white" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Paramètres"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginTop="@dimen/margin_extra_large"
+            android:paddingLeft="30dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"/>
+
+        <View
+            android:layout_width="150dp"
+            android:layout_height="5px"
+            android:alpha="0.5"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_weight="0.15">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/bg_spinner_white">
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nav_lang_sp"
+                android:backgroundTint="@color/white"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_glyph_brands_facebook_f"
+            android:tint="@color/white"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_glyph_brands_instagram"
+            android:tint="@color/white"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.25"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:src="@drawable/ic_glyph_brands_twitter"
+            android:tint="@color/white"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

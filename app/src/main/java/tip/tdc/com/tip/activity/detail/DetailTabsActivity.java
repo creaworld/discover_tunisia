@@ -17,6 +17,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -39,7 +40,9 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -130,8 +133,6 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
 
         private final View mContents;
 
-        private FrameLayout frameLayout;
-
         CustomInfoWindowAdapter() {
             mWindow = getLayoutInflater().inflate(R.layout.custom_info_window, null);
             mContents = getLayoutInflater().inflate(R.layout.custom_info_contents, null);
@@ -190,6 +191,8 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
     String cityKey;
     public FCity mFCity;
 
+    private FragmentManager fragmentManager;
+
     Context mContext;
 
     private WeatherPresenter presenter;
@@ -230,7 +233,7 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
 
     List<Place> listAllPlace = new LinkedList<>();
 
-
+    private ImageButton imagesBtn, xploreBtn, homeBtn, askBtn;
 
 
     @Override
@@ -239,6 +242,8 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
         setContentView(R.layout.activity_detail_tabs);
 
         mContext = this;
+
+        fragmentManager = getSupportFragmentManager();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
@@ -335,6 +340,7 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
 
         initializeMapView();
 
+
         final SVProgressHUD mSVProgressHUD = SVProgressInstance.showWithStatus(mContext, "Loading...");
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -356,6 +362,51 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
     private void initView() {
         toolbar_layout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         toolbar_layout.setTitle("");
+        imagesBtn = findViewById(R.id.images_ib);
+        askBtn = findViewById(R.id.imbAskShare);
+        homeBtn = findViewById(R.id.imbHome);
+        xploreBtn = findViewById(R.id.imbExplore);
+
+        imagesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GridFragment gridFragment = new GridFragment();
+
+                gridFragment.setPlaces(DetailTabsActivity.this, listAllPlace);
+
+                replaceFragment(gridFragment);
+                changeTint(imagesBtn);
+            }
+        });
+
+        askBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeTint(askBtn);
+            }
+        });
+
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(homeFragment);
+                changeTint(homeBtn);
+            }
+        });
+
+        xploreBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MapFragment fragment = new MapFragment();
+
+                fragment.setPlaces(listAllPlace, mFCity);
+
+                replaceFragment(fragment);
+
+                changeTint(xploreBtn);
+            }
+        });
 
 
         tvCityName = (TextView) findViewById(R.id.tvCityName);
@@ -381,12 +432,13 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
         findViewById(R.id.llMenuSaved).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = SearchActivity.createIntent(mContext);
+                /*Intent intent = SearchActivity.createIntent(mContext);
                 intent.putExtra(SearchActivity.SEARCH_TYPE, SearchActivity.SEARCH_TYPE_SAVED);
                 intent.putExtra(AppConstants.KEY_INTENT_CITY, mFCity);
 
                 startActivity(intent);
-                ((Activity) mContext).overridePendingTransition(R.anim.activity_enter_back, R.anim.activity_exit_back);
+                ((Activity) mContext).overridePendingTransition(R.anim.activity_enter_back, R.anim.activity_exit_back);*/
+
             }
         });
 
@@ -531,6 +583,15 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
         layoutParamsFrameMapFullScreen.height = maxHeightMapView;//(int)Utils.convertDpToPixel((float)maxHeightMapView, mContext);
     }
 
+    private void changeTint(ImageButton view) {
+        ((ImageButton) findViewById(R.id.imbHome)).setColorFilter(ContextCompat.getColor(DetailTabsActivity.this, R.color.colorGrey600), android.graphics.PorterDuff.Mode.SRC_IN);
+        ((ImageButton) findViewById(R.id.imbExplore)).setColorFilter(ContextCompat.getColor(DetailTabsActivity.this, R.color.colorGrey600), android.graphics.PorterDuff.Mode.SRC_IN);
+        ((ImageButton) findViewById(R.id.images_ib)).setColorFilter(ContextCompat.getColor(DetailTabsActivity.this, R.color.colorGrey600), android.graphics.PorterDuff.Mode.SRC_IN);
+        ((ImageButton) findViewById(R.id.imbAskShare)).setColorFilter(ContextCompat.getColor(DetailTabsActivity.this, R.color.colorGrey600), android.graphics.PorterDuff.Mode.SRC_IN);
+
+        view.setColorFilter(ContextCompat.getColor(DetailTabsActivity.this, R.color.colorPrimary), android.graphics.PorterDuff.Mode.SRC_IN);
+    }
+
     View.OnClickListener onClickWeatherListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -551,6 +612,7 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
                 mFCity = (FCity) getIntent().getSerializableExtra(AppConstants.KEY_INTENT_CITY);
                 tvTitleActivity.setText(mFCity.getName());
                 tvCityName.setText(mFCity.getName());
+
                 tvCityDescription.setText(mFCity.getIntro());
                 if (mFCity.getPhotourl().contains("http")) {
                     ImageLoader.getInstance().displayImage(mFCity.getPhotourl(), imvCityThumb, TipApplication.defaultOptions);
@@ -570,6 +632,8 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
                 categoryInfoList = TipApplication.getTipApplication().categoryService.getListCategoryInfoOfCity(cityKey);
 
 
+
+
                 categoryInfoCleanedTipEnd.clear();
 
                 CategoryInfo cateHome = new CategoryInfo();
@@ -587,7 +651,7 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
                             && categoryInfoList.get(i).getType() != AppConstants.CATEGORY_TRANSPORT_TYPE
                             && categoryInfoList.get(i).getType() != AppConstants.CATEGORY_CITY_INFO_TYPE
 //                            && categoryInfoList.get(i).getType() != AppConstants.CATEGORY_STORIES_TYPE
-                            ) {
+                    ) {
 
                         if (categoryInfoList.get(i).getType() != AppConstants.CATEGORY_TIP_TYPE) {
                             categoryInfoCleanedTipEnd.add(categoryInfo);
@@ -636,6 +700,13 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
                         homeFragment.setOnCatClickListener(new OnCatClickListener() {
                             @Override
                             public void onClick(CategoryInfo cat) {
+                                if (cat.getType() == AppConstants.CATEGORY_HOME_TYPE) {
+                                    if (homeFragment == null) {
+                                        homeFragment = new HomeFragment();
+                                        homeFragment.setDetailTabsActivity(DetailTabsActivity.this);
+                                        replaceFragment(homeFragment);
+                                    }
+                                }
                                 if (cat.getType() == AppConstants.CATEGORY_TIP_TYPE) {
                                     TipFragment tipFragment = new TipFragment();
                                     tipFragment.setDetailTabsActivity(DetailTabsActivity.this);
@@ -661,13 +732,21 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
     }
 
     private void replaceFragment(Fragment fragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.home_frame_layout, fragment);
         Log.e("frame change", "cccccccccccccccccccchanged");
         transaction.commit();
     }
 
+
+
+    @Override
+    protected void onDestroy() {
+        while (fragmentManager.getBackStackEntryCount() > 0)
+            fragmentManager.popBackStack();
+
+        super.onDestroy();
+    }
 
     private void loadData() {
         if (mFCity == null)
@@ -682,11 +761,10 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
 
     @Override
     public void onBackPressed() {
-        FragmentManager fm = getSupportFragmentManager();
 
-        if(fm.getBackStackEntryCount() > 0){
-            fm.popBackStack();
-        } else{
+        if (fragmentManager.getBackStackEntryCount() > 0) {
+            fragmentManager.popBackStack();
+        } else {
             super.onBackPressed();
         }
     }
@@ -777,7 +855,7 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
     public void updateTodayForecast(CurrentWeather currentWeather) {
 //        loading_weather_progress.setVisibility(View.INVISIBLE);
         LoggerFactory.d("updateTodayForecast");
-        if (currentWeather != null){
+        if (currentWeather != null) {
             int roundedTemp = (int) Math.round(currentWeather.getMain().getTemp());
             String tempWithDegrees = String.format(getString(R.string.degrees_placeholderC), roundedTemp);
             tvWeatherTemp.setText(tempWithDegrees);
@@ -922,7 +1000,6 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
         asyncTask.execute(new String[]{});
 
 
-
     }
 
     private void addMarkersToMap(final String category) {
@@ -968,7 +1045,7 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
                                     if (listAllPlace.get(i).getLatitude() != null && listAllPlace.get(i).getLatitude().length() > 0
                                             && listAllPlace.get(i).getLongitude() != null && listAllPlace.get(i).getLongitude().length() > 0
                                             && categoryAccept
-                                            ) {
+                                    ) {
                                         if (listAllPlace.get(i).getLatLng() == null) {
                                             listAllPlace.get(i).setLatLng(new LatLng(
                                                     Double.parseDouble(listAllPlace.get(i).getLongitude()),
@@ -1058,8 +1135,6 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
         }
 
 
-
-
         try {
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(Double.parseDouble(mFCity.getLatitude()), Double.parseDouble(mFCity.getLongitude())), 15));
         } catch (NumberFormatException e) {
@@ -1104,7 +1179,7 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
             if (categoryType == AppConstants.CATEGORY_SHOPPING_TYPE
                     || categoryType == AppConstants.CATEGORY_DRINK_TYPE
                     || categoryType == AppConstants.CATEGORY_EAT_TYPE
-                    ) {
+            ) {
                 placePrice.setVisibility(View.GONE);
             } else {
                 placePrice.setVisibility(View.VISIBLE);
@@ -1199,7 +1274,7 @@ public class DetailTabsActivity extends AppCompatActivity implements WeatherCont
         }
     }
 
-    public int getCategoryPageIndex(int cateType){
+    public int getCategoryPageIndex(int cateType) {
         for (int i = 0; i < categoryInfoCleanedTipEnd.size(); i++) {
             if (cateType == categoryInfoCleanedTipEnd.get(i).getType()) {
                 return i;
